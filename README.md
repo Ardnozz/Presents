@@ -33,4 +33,4 @@ Legend: <> = Necessary argument
 Discord: https://discord.gg/SJhXVep6dM
 
 Author's words:
->The project is in the begining. If you find some bugs or if you have some good idea to improve this plugin, contant me via my discord server. Thanks.
+> The project is in the begining. If you find some bugs or if you have some good idea to improve this plugin, contant me via my discord server. Thanks.
