@@ -1,0 +1,21 @@
+#Type NONE for default messages
+#Type OWN for your messages configured below
+language: "NONE"
+
+cmd_executor_not_player: "§cCommand have to be executed by Player!"
+cmd_presentgive_send_themselves: "§cYou cannot send a present to yourself."
+cmd_presentgive_argument_offline_player: "§cYou cannot send the present to offline player!"
+cmd_presentgive_holding_wrong_item: "§cYou have to hold not given present yet!"
+cmd_givepresent_successfully_sended: "§aPresent has been successfully sent."
+cmd_claimpresents_any_presents: "§cYou don't have any presents :("
+cmd_claimpresents_successfully: "§aYou have successfully received the presents."
+cmd_presentadmin_full_inv: "§cYou have full inventory!"
+cmd_presentadmin_item_doesnt_exist: "§cItem with that id doesn't exist."
+cmd_presentadmin_success: "§cItem with that id doesn't exist."
+present_given: "§aSomeone gave you a present. Claim it with /claimpresents."
+present_doesnt_exist: "§7The present doesn't exist. Replacing the item with a new present."
+cannot_rename_head: "§cYou cannot rename a player head."
+full_crafting: "§cThe crafting is full. You have to empty the result slot."
+cmd_argument_needed: "§cYou have to set the first argument (%s)!"
+cannot_save_config: "§cCannot save one of the config files!"
+cannot_find_message_by_key: "§cCannot find message by key!"

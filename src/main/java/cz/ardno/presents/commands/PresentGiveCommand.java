@@ -1,9 +1,9 @@
 package cz.ardno.presents.commands;
 
+import cz.ardno.presents.Presents;
 import cz.ardno.presents.commands.system.PresentPlayerCommand;
-import cz.ardno.presents.utilities.ConfigUtility;
+import cz.ardno.presents.enumerators.MessageUtility;
 import cz.ardno.presents.utilities.CraftingItems;
-import cz.ardno.presents.utilities.MessageUtility;
 import cz.ardno.presents.utilities.PresentsCompareUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -24,14 +24,14 @@ public class PresentGiveCommand extends PresentPlayerCommand {
                 ItemStack heldItem = player.getInventory().getItemInMainHand();
                 if (heldItem.getType().equals(Material.PLAYER_HEAD) && !heldItem.getItemMeta().hasLore() && heldItem.getItemMeta().hasDisplayName() && heldItem.getItemMeta().getDisplayName().contains("Present")) {
                     if (CraftingItems.presents.stream().anyMatch((present) -> PresentsCompareUtil.compareIgnoreCustomModelData(heldItem, present))) {
-                        String playerPresents = ConfigUtility.config.getString(arguments[0] + "-player");
+                        String playerPresents = Presents.storageYaml.getConfig().getString(arguments[0] + "-player");
                         String path = arguments[0] + "-player";
                         int customModelData = heldItem.getItemMeta().getCustomModelData();
 
                         if (playerPresents != null && !playerPresents.equals("null")) {
-                            ConfigUtility.config.set(path, ConfigUtility.config.getString(path) + ", " + customModelData + "-" + player.getName());
+                            Presents.storageYaml.getConfig().set(path, Presents.storageYaml.getConfig().getString(path) + ", " + customModelData + "-" + player.getName());
                         } else {
-                            ConfigUtility.config.set(path, customModelData + "-" + player.getName());
+                            Presents.storageYaml.getConfig().set(path, customModelData + "-" + player.getName());
                         }
 
                         heldItem.setAmount(0);

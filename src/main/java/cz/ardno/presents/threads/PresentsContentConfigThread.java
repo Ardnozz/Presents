@@ -1,7 +1,7 @@
 package cz.ardno.presents.threads;
 
 import cz.ardno.presents.Presents;
-import cz.ardno.presents.utilities.ConfigUtility;
+import cz.ardno.presents.files.StorageYaml;
 
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -18,8 +18,8 @@ public class PresentsContentConfigThread {
         thread = sec.schedule(() -> {
             Presents.instance.getLogger().log(Level.INFO, "Automatically saving buffer into config...");
             while (true) {
-                ConfigUtility.unsavedCustomModelData.forEach((customModelData) -> {
-                    ConfigUtility.config.set(String.valueOf(customModelData), ConfigUtility.presentsContents.get(customModelData).getContents());
+                StorageYaml.unsavedCustomModelData.forEach((customModelData) -> {
+                    Presents.storageYaml.getConfig().set(String.valueOf(customModelData), StorageYaml.presentsContents.get(customModelData).getContents());
                     try {
                         Thread.sleep(50);
                     } catch (InterruptedException e) {
@@ -28,7 +28,7 @@ public class PresentsContentConfigThread {
 
                 });
                 Presents.instance.saveConfig();
-                ConfigUtility.unsavedCustomModelData.clear();
+                StorageYaml.unsavedCustomModelData.clear();
                 Thread.sleep(1000 * 60 * 10);
             }
         }, 60 * 10, TimeUnit.SECONDS);

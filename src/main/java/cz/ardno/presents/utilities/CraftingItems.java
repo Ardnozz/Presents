@@ -3,6 +3,8 @@ package cz.ardno.presents.utilities;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import cz.ardno.presents.Presents;
+import cz.ardno.presents.enumerators.MessageUtility;
+import cz.ardno.presents.files.StorageYaml;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
@@ -93,12 +95,12 @@ public class CraftingItems {
 
             while (con) {
                 customModelData = ThreadLocalRandom.current().nextInt(100000) + 1;
-                if (!ConfigUtility.config.getString("presentsCustomModelData").contains(customModelData + colors.getColorId()) || (ConfigUtility.config.getString(customModelData + colors.getColorId()) != null && ConfigUtility.config.getString(customModelData + colors.getColorId()).equals("null"))) {
+                if (!Presents.storageYaml.getConfig().getString("presentsCustomModelData").contains(customModelData + colors.getColorId()) || (Presents.storageYaml.getConfig().getString(customModelData + colors.getColorId()) != null && Presents.storageYaml.getConfig().getString(customModelData + colors.getColorId()).equals("null"))) {
                     Inventory presentContent = Bukkit.createInventory(null, 27, "Present");
-                    ConfigUtility.config.set(customModelData + colors.getColorId(), presentContent.getContents());
-                    ConfigUtility.config.set("presentsCustomModelData", ConfigUtility.config.getString("presentsCustomModelData") + customModelData + colors.getColorId() + ", ");
-                    ConfigUtility.presentsContents.put(Integer.parseInt(customModelData + colors.getColorId()), presentContent);
-                    ConfigUtility.unsavedCustomModelData.add(Integer.parseInt(customModelData + colors.getColorId()));
+                    Presents.storageYaml.getConfig().set(customModelData + colors.getColorId(), presentContent.getContents());
+                    Presents.storageYaml.getConfig().set("presentsCustomModelData", Presents.storageYaml.getConfig().getString("presentsCustomModelData") + customModelData + colors.getColorId() + ", ");
+                    StorageYaml.presentsContents.put(Integer.parseInt(customModelData + colors.getColorId()), presentContent);
+                    StorageYaml.unsavedCustomModelData.add(Integer.parseInt(customModelData + colors.getColorId()));
                     con = false;
                 }
             }
@@ -140,7 +142,7 @@ public class CraftingItems {
     }
 
     public static void openPresentAsGUI(Player player, int customModelData) {
-        Inventory inventory = ConfigUtility.presentsContents.get(customModelData);
+        Inventory inventory = StorageYaml.presentsContents.get(customModelData);
         if (inventory == null) {
             PlayerInventory playersInventory = player.getInventory();
             String customModelId = String.valueOf(customModelData);
@@ -149,12 +151,12 @@ public class CraftingItems {
             return;
         }
         player.openInventory(inventory);
-        ConfigUtility.unsavedCustomModelData.add(customModelData);
+        StorageYaml.unsavedCustomModelData.add(customModelData);
         return;
     }
 
     public static void openPresent(Player player, int customModelData) {
-        Inventory inventory = ConfigUtility.presentsContents.get(customModelData);
+        Inventory inventory = StorageYaml.presentsContents.get(customModelData);
         if (inventory == null) {
             PlayerInventory playersInventory = player.getInventory();
             String customModelId = String.valueOf(customModelData);
@@ -169,9 +171,9 @@ public class CraftingItems {
 
         player.getInventory().getItemInMainHand().setAmount(0);
 
-        ConfigUtility.config.set(String.valueOf(customModelData), "null");
-        ConfigUtility.presentsContents.remove(customModelData);
-        ConfigUtility.unsavedCustomModelData.remove((Object) customModelData);
+        Presents.storageYaml.getConfig().set(String.valueOf(customModelData), "null");
+        StorageYaml.presentsContents.remove(customModelData);
+        StorageYaml.unsavedCustomModelData.remove((Object) customModelData);
         return;
     }
 

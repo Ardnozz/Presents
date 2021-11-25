@@ -1,8 +1,8 @@
 package cz.ardno.presents.listeners;
 
+import cz.ardno.presents.enumerators.MessageUtility;
 import cz.ardno.presents.utilities.CustomCraftingRecipes;
 import cz.ardno.presents.utilities.ItemsInRecipe;
-import cz.ardno.presents.utilities.MessageUtility;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;

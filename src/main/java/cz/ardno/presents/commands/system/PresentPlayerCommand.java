@@ -1,6 +1,6 @@
 package cz.ardno.presents.commands.system;
 
-import cz.ardno.presents.utilities.MessageUtility;
+import cz.ardno.presents.enumerators.MessageUtility;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
