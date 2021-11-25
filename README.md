@@ -10,3 +10,10 @@ Presents is a fun plugin that allows you to send presents in good-styled boxes. 
 
 ## Example:
 GIF - Coming soon...
+
+## Available commands:
+- /opencrafting - Opens a 4x4 crafting where you can craft items from this plugin.
+- /givepresent <Player> - Gives a present in your hand to an online player.
+- /claimpresents - Claims all presents you have.
+  
+Legend: <> = Necessary argument
