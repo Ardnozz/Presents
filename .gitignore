@@ -6,7 +6,7 @@
 *.iws
 
 # IntelliJ
-out/
+target/
 
 # Compiled class file
 *.class
