@@ -31,6 +31,7 @@ Legend: <> = Necessary argument
 
 ## Links
 SpigotMC (download): https://www.spigotmc.org/resources/presents.97840/
+
 Discord (support): https://discord.gg/SJhXVep6dM
 
 Author's words:
