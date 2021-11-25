@@ -1,0 +1,10 @@
+name: Presents
+version: '${project.version}'
+main: cz.ardno.presents.Presents
+api-version: 1.17
+authors: [ Ardno ]
+
+commands:
+  opencrafting:
+  givepresent:
+  claimpresents:
