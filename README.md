@@ -26,5 +26,5 @@ Legend: <> = Necessary argument
 
 ## Crafting recipes
 ![C1](https://i.imgur.com/b67TROf.png)
-![C2](https://i.imgur.com/Os30rya.png)
-![C3](https://i.imgur.com/K0I2A1l.png)
+![C2](https://i.imgur.com/C80nIHS.png)
+![C3](https://i.imgur.com/7jyF5WO.png)
