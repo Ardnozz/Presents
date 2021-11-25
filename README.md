@@ -23,3 +23,8 @@ Legend: <> = Necessary argument
 * 25 custom items (no resource pack needed!)
 * Automatic data saver if the server would crash
 * Sophisticated system that help to not disrupt gameplay
+
+## Crafting recipes
+![C1](https://i.imgur.com/b67TROf.png)
+![C2](https://i.imgur.com/Os30rya.png)
+![C3](https://i.imgur.com/K0I2A1l.png)
