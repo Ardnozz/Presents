@@ -28,3 +28,6 @@ Legend: <> = Necessary argument
 ![C1](https://i.imgur.com/b67TROf.png)
 ![C2](https://i.imgur.com/C80nIHS.png)
 ![C3](https://i.imgur.com/7jyF5WO.png)
+
+## Links
+Discord: https://discord.gg/SJhXVep6dM
