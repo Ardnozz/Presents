@@ -30,7 +30,8 @@ Legend: <> = Necessary argument
 ![C3](https://i.imgur.com/7jyF5WO.png)
 
 ## Links
-Discord: https://discord.gg/SJhXVep6dM
+SpigotMC (download): https://www.spigotmc.org/resources/presents.97840/
+Discord (support): https://discord.gg/SJhXVep6dM
 
 Author's words:
 > The project is in the begining. If you find some bugs or if you have some good idea to improve this plugin, contant me via my discord server. Thanks.
